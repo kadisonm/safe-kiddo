@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import logo from '../../assets/img/logo.svg';
 
 import browser from 'webextension-polyfill';
 
