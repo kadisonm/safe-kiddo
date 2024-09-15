@@ -2,7 +2,6 @@
   "manifest_version": 3,
   "name": "Safe Kiddo",
   "description": "A browser extension that provides parental controls to keep your kiddo safe online.",
-  "options_page": "options.html",
   "background": {
     "scripts": ["background.bundle.js"]
   },
