@@ -3,6 +3,7 @@
   "name": "Safe Kiddo",
   "description": "A browser extension that provides parental controls to keep your kiddo safe online.",
   "background": {
+    "service_worker": "background.bundle.js",
     "scripts": ["background.bundle.js"]
   },
   "action": {
@@ -11,5 +12,10 @@
   },
   "icons": {
     "128": "icon-128.png"
-  }
+  },
+  "permissions": [
+    "notifications",
+    "downloads",
+    "storage"
+  ]
 }
