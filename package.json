@@ -1,7 +1,7 @@
 {
   "name": "safe-kiddo",
   "version": "1.0.0",
-  "description": "A browser extension that provides parental controls to keep your kiddo safe online.",
+  "description": "The browser extension that gives you control of your kiddo's safety online.",
   "license": "GNU V3",
   "repository": {
     "type": "git",
