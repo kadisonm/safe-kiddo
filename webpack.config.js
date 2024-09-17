@@ -23,15 +23,6 @@ const plugins = [
     filename: 'popup.html',
     chunks: ['popup'],
   }),
-  new CopyWebpackPlugin({
-    patterns: [
-      {
-        from: 'src/background/index.js',
-        to: path.join(__dirname, 'build', 'background.js'),
-        force: true,
-      },
-    ],
-  }),
   new MiniCssExtractPlugin({
     filename: '[name].css',
   }),
@@ -49,7 +40,8 @@ const plugins = [
 const options = {
   mode: ENV,
   entry: {
-    popup: './src/popup/index.jsx',
+    popup: './src/popup/index.tsx',
+    background: './src/background.ts'
   },
   output: {
     filename: '[name].js',
@@ -57,17 +49,21 @@ const options = {
     clean: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: [
+              '@babel/preset-env', 
+              '@babel/preset-react', 
+              '@babel/preset-typescript',
+            ]
           },
         },
       },

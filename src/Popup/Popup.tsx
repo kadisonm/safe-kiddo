@@ -12,7 +12,8 @@ export default function Popup() {
   async function fetchBlockDownloads() {
     try {
       const result = await browser.storage.local.get('blockDownloads');
-      setBlockDownloads(result.blockDownloads || false);
+
+      setBlockDownloads(!!result.blockDownloads);
     } catch (error) {
       console.error('Error fetching blockDownloads:', error);
     }
@@ -24,7 +25,7 @@ export default function Popup() {
     fetchBlockDownloads();
   }, []);
 
-  const handleToggleChange = async (event) => {
+  const handleToggleChange = async (event: any) => {
     const isEnabled = event.target.checked;
     try {
       await browser.storage.local.set({ blockDownloads: isEnabled });
